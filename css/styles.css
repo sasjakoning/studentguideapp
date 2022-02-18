@@ -1,0 +1,1551 @@
+
+@font-face {
+  font-family: 'Colendra';
+  src: url('../fonts/ColendraRegular.otf');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Colendra';
+  src: url('../fonts/ColendraBold.otf');
+  font-style: normal;
+  font-weight: 700; /* bold */
+}
+
+/* Generieke styling start  */
+
+*, html {
+	padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px; /*zodat de topbar niet in de weg zit bij anchor links*/
+  scrollbar-width: none; /*om de scrollbar in firefox hidden te krijgen*/
+}
+
+/* De validator geeft een error voor de ''scrollbar-width: none; '' maar deze werkt wel en is de enigste goede manier op de scrollbar weg te krijgen.  */
+
+/* verder een boel waarschuwingen voor de webkit css die ignored kan worden.  */
+
+body {
+	background-image: url('../images/dot_background.png');
+  background-repeat: repeat;
+}
+
+h1, h3 {
+	font-family: 'Josefin Sans', sans-serif;   
+	font-size: 24pt;
+	color: #da5241;
+  font-weight: 700; /* bold */
+
+  padding: 1em 0 0.5em 0;
+}
+
+h2 {
+	font-family: 'Josefin Sans', sans-serif;   
+	font-size: 16pt;
+	line-height: 1.8em;
+	color: #1D1D1B;
+	font-weight: 700;
+}
+
+p, li {
+	font-family: 'Josefin Sans', sans-serif;
+  font-size: 14pt;
+}
+
+article {
+	margin: 62px 10% 25px 10%;
+}
+
+article > p {
+  padding-bottom: 1.5em;
+  line-height: 1.5;
+}
+
+article > p {
+  font-weight: bold;
+  padding-bottom: 1.5em;
+}
+
+article img {
+  max-width: 100%;
+  padding-bottom: 1em;
+}
+
+ul {
+  padding: 0 0 1em 2em;
+}
+
+header {
+  display: flex;
+	position: fixed;  
+  justify-content: space-between;
+  
+	background-color: white;
+	padding-top: 15px;
+	padding-bottom: 10px;
+  box-shadow: 5px 3px 8px #94949433;
+  
+	width: 100vw;
+  top: 0;
+  z-index: 10000;
+}
+
+header > a > img {
+	width: 10em;
+	padding-right: 1em;
+}
+
+/* generieke styling end  */
+
+
+/* css voor de afbeelding en text aan bovenkant van elke pagina start */
+
+#index section:first-of-type,
+main > section:first-of-type {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+main > section:first-of-type img:first-of-type{
+  position: absolute;
+  max-width: 100%;
+  padding-top: 52px;
+
+  z-index: -1;
+}
+
+#index section:first-of-type img:nth-of-type(2) {
+  position: absolute;
+  top: 50%;
+  margin: 0 10% 0 10%;
+}
+
+main > section:first-of-type img:nth-of-type(2) {
+  position: absolute;
+  top: 56%;
+  margin: 0 10% 0 10%;
+}
+
+main > section:first-of-type h1 {
+  position: absolute;
+  color: #1D1D1B;
+  top: 35%;
+
+  padding: 0.3em 0 0 0;
+  margin: 0 10% 0 10%;
+}
+
+/* css voor de afbeelding en text aan bovenkant van elke pagina end */
+
+
+/* minder generieke styling voor article in specifieke paginas start */
+
+#index article {
+  position: relative;
+}
+
+#factorfiction article {
+  margin: 0 10% 25px 10%;
+}
+
+#factorfiction main > a {
+  display: flex;
+  justify-content: center;
+
+  color: black;
+  font-weight: bold;
+  font-size: 1.5em; 
+  text-decoration: none;
+  font-family: 'Josefin sans', sans-serif; 
+
+  background-color: white;
+  border: 1px solid lightgray;
+  box-shadow: 5px 3px 8px #33333352;
+
+  padding: 1em 0 1em 0;
+  max-width: 100%;
+  margin: 0 10% 25px 10%;
+}
+
+#index article > a {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100%;
+  height: 8rem;
+  margin-bottom: 4rem;
+
+  background-color: white;
+  box-shadow: 5px 3px 8px #33333352;
+  text-decoration: none;
+
+  animation-name: wiggle;
+  animation-duration: 0.5s;
+  animation-delay: 2s;
+}
+
+@keyframes wiggle{
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(-2deg);}
+  50% {transform: rotate(2deg);}
+  75% {transform: rotate(-2deg);}
+  100% {transform: rotate(0deg);}
+}
+
+#index article > a h1 {
+  font-size: 10vw;
+  color: black;
+  padding: 0;
+  text-align: center;
+}
+
+#index article > a p {
+  color: black;
+  padding: 0;
+  text-align: center;
+  margin: 0.5em 0 0 0;
+  font-weight: bold;
+}
+
+#index article > img {
+  position: absolute;
+  z-index: 2;
+  max-width: 37%;
+  top: 25%;
+  left: 19%;
+}
+
+#index article > p:first-of-type {
+  position: absolute;
+  max-width: 100%;
+  top: 31%;
+  left: 3%;
+  padding: 0;
+  transform: rotate(-26deg);
+}
+
+/* minder generieke styling voor in specifieke paginas end */
+
+
+/* nav start */
+
+nav {
+  display: block;
+  position: relative;
+  top: 1px;
+  left: 20px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+nav input {
+  display: block;
+  position: absolute;
+
+  width: 40px;
+  height: 32px;
+
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; 
+  z-index: 2; 
+  
+  -webkit-touch-callout: none;
+}
+
+/* een hamburger */
+
+nav span {
+  display: block;
+  position: relative;  
+
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+
+  background: black;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+nav span:first-child {
+  transform-origin: 0% 0%;
+}
+
+nav span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+nav input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: black;
+}
+
+nav input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+nav input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+nav ul {
+  position: absolute;
+  width: 300px;
+  margin: 9px 0 0 -100px;
+  padding: 40px 50px 50em 100px;
+  box-shadow: 0px 8px 8px #94949433;
+
+  background: white;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+nav ul li {
+  padding: 20px 0;
+  font-size: 22px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+}
+
+nav input:checked ~ ul {
+  transform: none;
+}
+
+/* Bron menu: https://codepen.io/erikterwan/pen/EVzeRP */
+
+.back {
+	width: 1.3em;
+}
+
+/* nav end */
+
+
+
+/* footer start */
+
+footer {
+  background-color: #2b2d48;
+  padding: 2em 0 2em 0;
+  margin-top: 8em;
+}
+
+#index footer,
+#factorfiction footer {
+  margin-top: 0;
+}
+
+footer h3 {
+  margin: 0 10% 0 10%;
+  font-size: 1.5em;
+}
+
+footer p {
+  font-size: 1em;
+  color: white;
+  margin: 0 10% 0 10%;
+  padding-bottom: 1em;
+}
+
+/* footer end */
+
+
+
+/* show/hide toggle start */
+
+section div {
+  display: none;
+}
+
+div .card { 
+display: none;
+}
+
+input:checked + label + div { 
+  display: block;
+  margin-top: 10px; 
+}
+
+details summary {
+  list-style: none;  
+  outline: none;
+  border-bottom: 1px solid black;
+  padding-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+details p {
+  padding-top: 1em;
+  line-height: 1.5;
+}
+
+details summary::-webkit-details-marker {
+  display:none;
+}
+
+details summary::after {
+  background-image: url(../images/arrow.svg);
+  margin-bottom: 5px;
+  width: 25px;
+  height: 25px;
+  content: "";
+}
+
+details[open] summary::after {
+  background-image: url(../images/arrow-down.svg);
+}
+
+details summary {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+
+/* na 2 uur zoeken heb ik ontdekt dat het bovenstaande stukje css mijn flipcards verpest dus daarom een specefiek stukje code voor de factorfiction pagina */
+
+input:checked + label img{
+  transform: rotate(-90deg);
+}
+
+label img {
+  width: 1.5em;
+  padding-bottom: 0.2em;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  width: 100%;
+  padding-top: 1em;
+}
+
+/* bron: http://jsfiddle.net/gSPqX/1/ */
+
+/* show/hide toggle end */
+
+
+
+/* horizontal scroll bar start */
+
+.scrolling-wrapper {
+  padding: 0.3em 0 0 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100vw;
+  margin-left: -38px;
+  -webkit-overflow-scrolling: touch;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.scrolling-wrapper li {
+  display: inline-block;
+  background-color: #2b2d48;
+  border: 2px solid white;
+  padding: 0.3em 1em 0.3em 1em ;
+  border-radius: 1em;
+}
+
+.scrolling-wrapper li:first-of-type {
+  background-color: transparent;
+  border: none;
+}
+
+.scrolling-wrapper li a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.8em;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.scrolling-wrapper-index {
+	position: relative;
+
+  padding: 0.2em 0 1em 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+
+  left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	max-width: 100vw;
+
+	right: 50%;
+  width: 100vw;
+}
+
+/* bron om de width 100% te krijgen: https://gomakethings.com/how-to-break-an-image-out-of-its-parent-container-with-css/ */
+
+.scrolling-wrapper-index li:last-of-type {
+  margin-right: 1em;
+}
+
+.scrolling-wrapper-index li {
+  display: inline-block;
+  position: relative;  
+
+  background-color: white;
+  border: 1px solid lightgray;
+  box-shadow: 5px 3px 8px #33333352; 
+
+  max-width: 100%;
+  height: 12em;
+  width: 8em;
+  margin-left: 1em;
+}
+
+.scrolling-wrapper-index li a {
+  position: absolute;
+  height: 12em;
+  width: 8em;
+  text-align: center;
+  color: black;
+}
+
+.scrolling-wrapper-index li a img {
+  width: 6em;
+  padding: 1em 0 1em 0;
+  margin-right: 2px ;
+}
+
+.scrolling-wrapper-index li p {
+  position: absolute;
+  text-align: center;  
+
+  font-family: 'Colendra', sans-serif;
+  font-weight: bold;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 60%;
+  padding: 0;
+  white-space: normal;
+  max-width: 100%;
+  font-size: 1.3em;
+}
+
+/* bron: https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6 */
+
+.scrolling-wrapper-index li:nth-child(2n+1) {
+  -moz-transform: rotate(-2deg);
+  -webkit-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+.scrolling-wrapper-index li:nth-child(3n+2) {
+  -moz-transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+  -o-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  transform: rotate(1deg);
+}
+
+.scrolling-wrapper-index li:nth-child(5n+3) {
+  -moz-transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+
+.scrolling-wrapper-index li:nth-child(7n+5) {
+  -moz-transform: rotate(6deg);
+  -webkit-transform: rotate(6deg);
+  -o-transform: rotate(6deg);
+  -ms-transform: rotate(6deg);
+  transform: rotate(6deg);
+}
+
+.scrolling-wrapper-index li:nth-child(11n+7) {
+  -moz-transform: rotate(4deg);
+  -webkit-transform: rotate(4deg);
+  -o-transform: rotate(4deg);
+  -ms-transform: rotate(4deg);
+  transform: rotate(4deg);
+}
+
+/* bron faked random: https://coderwall.com/p/gze7ug/faked-random-with-css-and-the-cicada-principle */
+
+/* horizontal scroll bar end */
+
+
+/* polaroids start */
+
+.polaroid-card{
+  position: relative;
+  width: 100%;
+  height: 125vw;
+  margin: 1em 0 3em 0 !important;
+  text-align: center;
+}
+
+.card-view, .card, .face {
+  width: 100%;
+  height: 125vw;
+}
+ 
+.card {
+  position: relative;
+  display: block;
+
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  text-align: center;
+  margin: 0 0 2em 0;
+}
+
+.face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+
+.face img {
+  width: 75%;
+  margin-top: 4em;
+  padding: 0;
+}
+
+.face img:nth-of-type(2) {
+  position: absolute;
+
+  left: 80%;
+  width: 20vw;
+  top: 48%;
+
+  transform: rotate(-25deg);
+  animation-name: press;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  z-index: 2;
+  margin: 0;
+}
+
+.face img:nth-of-type(3) {
+  position: absolute;
+
+  left: 79%;
+  width: 8vw;
+  top: 49%;
+
+  animation-name: press-circle;
+  animation-duration: 0.7s;
+  animation-delay: 1.35s;
+  margin: 0;
+}
+
+@keyframes press {
+  0% {transform: scale(1) rotate(-25deg);}
+  25% {transform: scale(1.1) rotate(-25deg);}
+  50% {transform: scale(0.9) rotate(-25deg);}
+  75% {transform: scale(0.9) rotate(-25deg);}
+  100% {transform: scale(1) rotate(-25deg);}
+}
+
+@keyframes press-circle {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.3);}
+  100% {transform: scale(1);}
+}
+
+.face figcaption p:first-of-type {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  font-size: 8vw;
+  font-weight: bold;
+  padding: 0.6em 2rem 0 2rem;
+}
+
+.card .face:nth-of-type(2) figcaption p:first-of-type {
+  font-size: 4.5vw;
+  padding: 0.7em 2em 0 2em;
+  font-weight: bold;
+}
+
+.polaroid-card:first-of-type .face figcaption p:nth-of-type(2) {
+  font-size: 8vw;
+  padding: 0.5em 1.3em 0 1.3em;
+  font-weight: bold;
+}
+
+.face figcaption p:nth-of-type(2) {
+  font-size: 7vw;
+  padding: 0.7em 1.3em 0 1.3em;
+  font-weight: bold;
+}
+
+.face:nth-of-type(1) p:nth-of-type(3) {
+  padding: 0.5em 0 0 0;
+  font-size: 5.5vw;
+  font-weight: bold;
+  color: #59b3ab;
+}
+
+.face:nth-of-type(2) figcaption p:nth-of-type(2) {
+  position: absolute;
+  top: 28%;
+  width: 100%;
+  transform: rotate(-25deg);
+  font-size: 5.5em !important;
+  padding: 0 !important;
+  -webkit-text-stroke: 3px rgb(240, 240, 240);
+}
+
+.face:nth-of-type(2) figcaption p:nth-of-type(3) {
+  font-size: 1em;
+  text-align: left;
+  font-family: 'colendra', sans-serif;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  line-height: 1.2em;
+
+  padding: 0.2em 2.3rem 0 2.3rem;
+}
+
+.polaroid-card a {
+  position: absolute;
+  display: none;
+
+  font-family: 'colendra', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-align: left;
+
+  left: 2.3rem;
+  bottom: 0.7rem;
+
+  z-index: 5;
+}
+
+.face:first-of-type {
+  z-index: 2;
+  background: white;
+  border: 1px solid lightgray;
+  box-shadow: 5px 3px 8px #33333352;
+}
+
+.face:nth-of-type(2) {
+  transform: rotateY(180deg);
+  background: rgb(240, 240, 240);
+  border: 1px solid lightgray;
+  box-shadow: 5px 3px 8px #33333352;
+}
+
+#toggle1:checked ~ .card, 
+#toggle2:checked ~ .card,
+#toggle3:checked ~ .card,
+#toggle4:checked ~ .card,
+#toggle5:checked ~ .card,
+#toggle6:checked ~ .card,
+#toggle7:checked ~ .card  {
+  transform: rotateY(-180deg);
+}
+
+#toggle1:checked ~ a, 
+#toggle2:checked ~ a,
+#toggle3:checked ~ a,
+#toggle4:checked ~ a,
+#toggle5:checked ~ a,
+#toggle6:checked ~ a,
+#toggle7:checked ~ a  {
+  display: block;
+  animation-name: link-flip, link-opacity;
+  animation-duration: 0.5s;
+}
+
+@keyframes link-flip {
+  from {transform: rotateY(-180deg);}
+  to {transform: rotateY(0deg);}
+}
+
+@keyframes link-opacity {
+  0% {opacity: 0;}
+  30% {opacity: 0;}
+  40% {opacity: 1;}
+  100% {opacity: 1;}
+}
+
+
+#toggle1, 
+#toggle2,
+#toggle3,
+#toggle4,
+#toggle5,
+#toggle6,
+#toggle7 {
+  display: none;
+}
+
+#toggle-label1, 
+#toggle-label2,
+#toggle-label3,
+#toggle-label4,
+#toggle-label5,
+#toggle-label6,
+#toggle-label7 {
+  position: absolute;
+  display: block;
+
+  width: 100%;
+  height: 125vw;
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: all .5s;
+  z-index: 1;
+  border: none;
+  padding: 0;
+}
+
+/* bron (zwaar aangepast) van bovenstaande code: https://codepen.io/joetower/pen/bdulk */
+
+.fact {
+  color: #59b3ab;
+  font-weight: bold;
+  
+  display: inline;
+  height: auto;
+  margin-bottom: 0;
+  
+  background: transparent;
+  border-radius: 0;
+  
+  z-index: 0;
+}
+
+.fiction {
+  color: #da5241;
+  font-weight: bold;
+
+  display: inline;
+  height: auto;
+  margin-bottom: 0;
+  
+  background: transparent;
+  border-radius: 0;
+  
+  z-index: 0;
+}
+
+.quick-fact {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  margin: 4em 0 2em 0;
+  background-color: white;
+  border: 1px solid lightgray;
+  max-width: 100%;
+  height: 45vw;
+  box-shadow: 5px 3px 8px #33333352;
+}
+
+.quick-fact p:first-of-type {
+  position: absolute;
+
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  text-align: center;  
+  font-size: 5vw;
+  color: #1D1D1B;    
+
+  max-width: 80%;
+  padding: 1em 0 0 0;
+  top: 8%;
+  border-bottom: 1px solid black;
+}
+
+.quick-fact p {
+  margin: auto;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bold;
+  max-width: 80%;
+  text-align: center;
+  font-size: 5.5vw;
+  padding: 2.5em 0 0 0;
+
+}
+
+.quick-fact img {
+  position: absolute;
+  padding: 0;
+  max-width: 30%;
+  top: -27%;
+}
+
+
+/* polaroids end */
+
+
+
+/* vanaf hier alleen media queries */
+
+
+@media screen and (min-width: 768px){
+
+  article {
+    margin: 20em 20% 25px 20%;
+  }
+  
+  /* nav start */
+  
+  header {
+    display: flex;
+    background-color: white;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: space-between;
+    box-shadow: 5px 3px 8px #94949433;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10000;
+  }
+
+  nav {
+    display: block;
+    position: static;
+    order: 2;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #232323;
+    
+    transition: color 0.3s ease;
+  }
+  
+  nav input {
+    display: none;
+  }
+  
+  nav span {
+    display: none;
+  }
+  
+  nav ul {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    background: white;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    
+    transform-origin: 0% 0%;
+    transform: none;
+    
+    transition: none;
+  }
+  
+  nav ul li {
+    padding: 24px 15px;
+    font-size: 1em;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    height: 62px;
+  }
+
+  nav ul li:first-of-type {
+    display: none;
+  }
+
+  nav ul li:last-of-type {
+    margin-right: 1em;
+  }
+
+  nav ul li:hover {
+    background-color: rgb(231, 231, 231);
+    transition: background ease 250ms;
+  }
+  
+  header > a {
+    display: flex;
+    order: 1;
+    padding-left: 1em;
+    justify-content: flex-start;
+    height: 50%;
+    padding-top: 18px;
+  }
+
+  .back {
+    display: block;
+    position: static;
+    order: 2;
+    width: 100%;
+    height: 62px;
+    top: 0;
+    z-index: 10;
+  }
+
+  .back a {
+    height: 62px;
+    width: 100%;
+  }
+
+  .back img {
+    width: 1.3em;
+    position: absolute;
+    top: 32%;
+  }
+
+  /* nav end */
+
+
+  /* homepage start */
+
+  #index section:first-of-type {
+    position: relative;
+    width: 100%;
+    height: 250px;
+  }
+
+  #index section:first-of-type::after {
+    content: "Best viewed on mobile!";
+    position: relative;
+    display: block;
+    top: 13em;
+    left: 0;
+    margin: auto;
+    width: 11em;
+    color: black;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: white;
+    padding: 0.4em 0.5em;
+  }
+  
+  main > section:first-of-type {
+    position: relative;
+    width: 100%;
+    height: 225px;
+  }
+  
+  main > section:first-of-type img:first-of-type{
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    height: 30em;
+    padding-top: 52px;
+    z-index: -1;
+  }
+  
+  #index section:first-of-type img:nth-of-type(2) {
+    position: relative;
+    display: block;
+    top: 8em;
+    left: 0;
+    width: 27em;
+    margin: auto;
+  }
+  
+  main > section:first-of-type img:nth-of-type(2) {
+    position: relative;
+    display: block;
+    top: 56%;
+    left: 0;
+    width: 27em;
+    margin: auto;
+  }
+  
+  main > section:first-of-type h1 {
+    position: absolute;
+    color: #1D1D1B;
+    top: 35%;
+    padding: 0.3em 0 0 0;
+    margin: 0 10% 0 10%;
+  }
+
+  #index article {
+    margin: 16em 10% 25px 10%;
+  }
+
+  #index article > a {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 38em;
+    height: 6rem;
+    margin: auto;
+    background-color: white;
+    box-shadow: 5px 3px 8px #33333352;
+    margin-bottom: 4rem;
+    text-decoration: none;
+    animation: none;
+  }
+
+  #index article > a:hover {
+    background-color: rgb(247, 247, 247);
+    transition: background ease 250ms;
+    border: 2px solid darkgrey;
+  }
+  
+  #index article > a h1 {
+    font-size: 3em;
+    color: black;
+    padding: 0;
+    text-align: center;
+  }
+  
+  #index article > a p {
+    color: black;
+    padding: 0;
+    text-align: center;
+    margin: 0.5em 0 0 0;
+    font-weight: bold;
+  }
+  
+  #index article > img {
+    display: none;
+  }
+  
+  #index article > p:first-of-type {
+    display: none;
+  }
+
+
+
+  .scrolling-wrapper-index,
+  .scrolling-wrapper {
+    padding: 0.2em 0 1em 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+
+    display: flex;
+    justify-content: center;
+  
+    left: 0;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100vw;
+    position: relative;
+    right: 0;
+    width: 100%;
+  }
+
+  .scrolling-wrapper-index li:last-of-type {
+    margin-right: 1em;
+  }
+  
+  .scrolling-wrapper-index li {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid lightgray;
+    max-width: 100%;
+    box-shadow: 5px 3px 8px #33333352;
+    height: 14em;
+    width: 9em;
+    margin-left: 1em;
+    position: relative;
+  }
+  
+  .scrolling-wrapper-index li a {
+    position: absolute;
+    height: 14em;
+    width: 9em;
+    text-align: center;
+    color: black;
+    border: 2px solid transparent;
+  }
+
+  .scrolling-wrapper-index li a:hover {
+    background-color: rgb(247, 247, 247);
+    transition: background ease 250ms;
+    border: 2px solid darkgrey;
+  }
+  
+  .scrolling-wrapper-index li a img {
+    width: 80%;
+    padding: 1em 0 1em 0;
+    margin-right: 2px ;
+  }
+  
+  .scrolling-wrapper-index li p {
+    position: absolute;
+    font-family: 'Colendra', sans-serif;
+    font-weight: bold;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60%;
+    padding: 0;
+    white-space: normal;
+    max-width: 100%;
+    font-size: 1.3em;
+    text-align: center;
+  }
+
+  /* homepage end  */
+
+  #factorfiction article {
+    margin: 16em 10% 25px 10%;
+    text-align: center;
+  }
+
+  
+  /* polaroids start */
+
+  .polaroid-card{
+    position: relative;
+    width: 15em;
+    height: 25em;
+    margin: 3em 2em 3em 0 !important;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .card-view, .card, .face {
+    width: 15em;
+    height: 25em;
+  }
+  
+  .card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    text-align: center;
+    display: block;
+    margin: 0 0 2em 0;
+  }
+
+  .face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+  }
+
+  .face img {
+    width: 75%;
+    margin-top: 3em;
+    padding: 0;
+  }
+
+  .face img:nth-of-type(2) {
+    position: absolute;
+    left: 80%;
+    width: 4em;
+    top: 48%;
+    transform: rotate(-25deg);
+    animation-name: press;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    z-index: 2;
+    margin: 0;
+  }
+
+  .face img:nth-of-type(3) {
+    position: absolute;
+    left: 79%;
+    width: 2em;
+    top: 49%;
+    animation-name: press-circle;
+    animation-duration: 0.7s;
+    animation-delay: 1.35s;
+    margin: 0;
+  }
+
+  @keyframes press {
+    0% {transform: scale(1) rotate(-25deg);}
+    25% {transform: scale(1.1) rotate(-25deg);}
+    50% {transform: scale(0.9) rotate(-25deg);}
+    75% {transform: scale(0.9) rotate(-25deg);}
+    100% {transform: scale(1) rotate(-25deg);}
+  }
+
+  @keyframes press-circle {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.3);}
+    100% {transform: scale(1);}
+  }
+
+  .face figcaption p:first-of-type {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 0.6em 2rem 0 2rem;
+  }
+
+  .card .face:nth-of-type(2) figcaption p:first-of-type {
+    font-size: 1em;
+    padding: 0.7em 2em 0 2em;
+    font-weight: bold;
+  }
+
+  .polaroid-card:first-of-type .face figcaption p:nth-of-type(2) {
+    font-size: 1.6em;
+    padding: 0.5em 1.3em 0 1.3em;
+    font-weight: bold;
+  }
+
+  .face figcaption p:nth-of-type(2) {
+    font-size: 1.6em;
+    padding: 0.7em 1.3em 0 1.3em;
+    font-weight: bold;
+  }
+
+  .face:nth-of-type(1) p:nth-of-type(3) {
+    padding: 0.5em 0 0 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #59b3ab;
+  }
+
+  .face:nth-of-type(2) figcaption p:nth-of-type(2) {
+    position: absolute;
+    top: 28%;
+    width: 100%;
+    transform: rotate(-25deg);
+    font-size: 4em !important;
+    padding: 0 !important;
+    -webkit-text-stroke: 3px rgb(240, 240, 240);
+  }
+
+  .face:nth-of-type(2) figcaption p:nth-of-type(3) {
+    font-size: 0.9em;
+    padding: 0.2em 2rem 0 2rem;
+    text-align: left;
+    font-family: 'colendra', sans-serif;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    line-height: 1.2em;
+  }
+
+  .polaroid-card a {
+    font-family: 'colendra', sans-serif;
+    left: 2.3rem;
+    bottom: 0.7rem;
+    position: absolute;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: left;
+    display: none;
+    z-index: 5;
+    font-size: 0.7em;
+  }
+
+  .face:first-of-type {
+    z-index: 2;
+    background: white;
+    border: 1px solid lightgray;
+    box-shadow: 5px 3px 8px #33333352;
+  }
+
+  .face:nth-of-type(2) {
+    transform: rotateY(180deg);
+    background: rgb(240, 240, 240);
+    border: 1px solid lightgray;
+    box-shadow: 5px 3px 8px #33333352;
+  }
+
+  #toggle1:checked ~ .card, 
+  #toggle2:checked ~ .card,
+  #toggle3:checked ~ .card,
+  #toggle4:checked ~ .card,
+  #toggle5:checked ~ .card,
+  #toggle6:checked ~ .card,
+  #toggle7:checked ~ .card  {
+    transform: rotateY(-180deg);
+  }
+
+  #toggle1:checked ~ a, 
+  #toggle2:checked ~ a,
+  #toggle3:checked ~ a,
+  #toggle4:checked ~ a,
+  #toggle5:checked ~ a,
+  #toggle6:checked ~ a,
+  #toggle7:checked ~ a  {
+    display: block;
+    animation-name: link-flip, link-opacity;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes link-flip {
+    from {transform: rotateY(-180deg);}
+    to {transform: rotateY(0deg);}
+  }
+
+  @keyframes link-opacity {
+    0% {opacity: 0;}
+    30% {opacity: 0;}
+    40% {opacity: 1;}
+    100% {opacity: 1;}
+  }
+
+
+  #toggle1, 
+  #toggle2,
+  #toggle3,
+  #toggle4,
+  #toggle5,
+  #toggle6,
+  #toggle7 {
+    display: none;
+  }
+
+  #toggle-label1, 
+  #toggle-label2,
+  #toggle-label3,
+  #toggle-label4,
+  #toggle-label5,
+  #toggle-label6,
+  #toggle-label7 {
+    position: absolute;
+    width: 15em;
+    height: 25em;
+    background: transparent;
+    cursor: pointer;
+    text-align: center;
+    transition: all .5s;
+    z-index: 1;
+    display: block;
+    border: none;
+    padding: 0;
+  }
+
+  /* bron (zwaar aangepast) van bovenstaande code: https://codepen.io/joetower/pen/bdulk */
+
+  .fact {
+    color: #59b3ab;
+    font-weight: bold;
+    
+    display: inline;
+    height: auto;
+    margin-bottom: 0;
+    
+    background: transparent;
+    border-radius: 0;
+    
+    z-index: 0;
+  }
+
+  .fiction {
+    color: #da5241;
+    font-weight: bold;
+
+    display: inline;
+    height: auto;
+    margin-bottom: 0;
+    
+    background: transparent;
+    border-radius: 0;
+    
+    z-index: 0;
+  }
+
+  .quick-fact {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    margin: 3em 2em 2em 0;
+    top: -23.24em;
+    background-color: white;
+    border: 1px solid lightgray;
+    width: 15em;
+    height: 9em;
+    box-shadow: 5px 3px 8px #33333352;
+  }
+
+  .quick-fact h1 {
+    position: absolute;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    max-width: 80%;
+    text-align: center;
+    padding: 1em 0 0 0;
+    font-size: 1em;
+    color: #1D1D1B;  
+    top: 8%;
+    border-bottom: 1px solid black;
+  }
+
+  .quick-fact p {
+    margin: 1em 0 0 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    max-width: 80%;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 2.5em 0 0 0;
+
+  }
+
+  .quick-fact p:first-of-type {
+    top: -2%;
+    font-size: 1em;
+  }
+
+  .quick-fact img {
+    position: absolute;
+    padding: 0;
+    max-width: 30%;
+    top: -27%;
+  }
+
+
+  /* polaroids end */
+
+}
+    
